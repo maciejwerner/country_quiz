@@ -1,0 +1,251 @@
+*, *:before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+  GENERAL
+*/
+:root {
+  --color-dark: #2d3436;
+  --color-white: #fff;
+  --color-gray: #dcdde1;
+  --color-gray-middle: #718093;
+  --color-yellow: #f39c12;
+  --color-blue: #2980b9;
+  --color-green: #27ae60;
+  --color-red: #c0392b;
+  --color-dark-blue: #100E1D;
+
+  --container-width: 90%;
+  --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5), 0 1px 0 0 #E5E5E5;
+  --transition: .3s ease-in-out;
+}
+.body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("./images/background.png") center / cover no-repeat;
+}
+.main {
+  margin: auto;
+}
+.footer {
+  margin-top: auto;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media(max-width: 512px) {
+  .footer {
+    height: 120px;
+    flex-direction: column;
+  }
+}
+.img {
+  width: 100%;
+  display: block;
+}
+.span {
+  display: inline-block;
+}
+.link {
+  text-decoration: none;
+}
+.btn {
+  outline: none;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.main {
+  width: 100%;
+}
+/* 
+  CONTAINER
+*/
+.container {
+  position: relative;
+  width: min(500px, 80%);
+  margin:  0 auto;
+}
+.title {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-gray);
+}
+.img-globe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  z-index: 5;
+}
+/* 
+  QUIZ BOX
+*/
+.question-box {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-white);
+  border-radius: 1rem;
+}
+.question-box--header {
+  margin: 3rem 0 2rem;
+}
+.img-flag {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+.quiz-question {
+  color: var(--color-blue);  
+}
+.question-list {
+  list-style: none;
+  counter-reset: my-counter;
+}
+.question-list--li {
+  display: block;
+  width: 100%;
+}
+.btn-answer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding: 1rem;
+  border-color: var(--color-blue);
+  border-radius: 1rem;
+  color: var(--color-blue);
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: left;
+}
+.btn-answer::before {
+  display: inline-block;
+  content: counter(my-counter, upper-alpha);
+  counter-increment: my-counter;
+  color: var(--color-blue);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-right: .5rem;
+  transition: all var(--transition);
+}
+.btn-answer:hover:not(:disabled) {
+  color: var(--color-white);
+  border-color: var(--color-yellow);
+  background: var(--color-yellow);
+}
+.btn-answer:hover:not(:disabled)::before {
+  color: var(--color-white);
+}
+.span-name,
+.span-icon {
+  pointer-events: none;
+}
+.span-icon {
+  margin-left: auto;
+  color: var(--color-white);
+}
+
+/* ANSWER BUTTON BACKGROUND CHANGE */
+.bg-green {
+  color: var(--color-white);
+  background: var(--color-green);
+  border-color: var(--color-green);
+}
+.btn-answer.bg-green::before {
+  color: var(--color-white);
+}
+.bg-red {
+  color: var(--color-white);
+  background: var(--color-red);
+  border-color: var(--color-red);
+}
+.btn-answer.bg-red::before {
+  color: var(--color-white);
+}
+
+/* NEXT BUTTON */
+.btn-next {
+  display: block;
+  margin-left: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-transform: capitalize;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: var(--color-yellow);
+  border-radius: 1rem;
+}
+.btn-next:hover {
+  box-shadow: var(--box-shadow);
+}
+.disabled {
+  display: none;
+}
+
+/* 
+  QUIZ WINNER
+*/
+.quiz-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img-trophy {
+  width: 250px;
+  margin: 3rem 0;
+}
+.result-title {
+  color: var(--color-blue);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.result-desc {
+  color: var(--color-blue);
+  font-size: 1.2rem;
+}
+.span-result {
+  color: var(--color-green);
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+.btn-again {
+  margin: 2rem 0 1rem;
+  padding: 1rem 1.5rem;
+  border-color: var(--color-blue);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  color: var(--color-blue);
+  background: var(--color-white);
+}
+.btn-again:hover {
+  color: var(--color-white);
+  border-color: var(--color-yellow);
+  background: var(--color-yellow);
+}
+.noClick {
+  pointer-events: none;
+}
+
+/* 
+  FOOTER
+*/
+.span-footer,
+.link-footer {
+  color: var(--color-white);
+  margin-right: .3rem;
+}
