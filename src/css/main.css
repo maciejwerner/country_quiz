@@ -28,8 +28,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("./images/background.png") center / cover no-repeat;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background: url("../images/background.png") center / cover no-repeat;
 }
 .main {
   margin: auto;
@@ -67,7 +67,7 @@
   width: 100%;
 }
 /* 
-  CONTAINER
+
 */
 .container {
   position: relative;
@@ -158,6 +158,7 @@
   color: var(--color-white);
 }
 
+
 /* ANSWER BUTTON BACKGROUND CHANGE */
 .bg-green {
   color: var(--color-white);
@@ -175,7 +176,6 @@
 .btn-answer.bg-red::before {
   color: var(--color-white);
 }
-
 /* NEXT BUTTON */
 .btn-next {
   display: block;
@@ -195,6 +195,7 @@
 .disabled {
   display: none;
 }
+
 
 /* 
   QUIZ WINNER
